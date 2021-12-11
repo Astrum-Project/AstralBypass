@@ -5,7 +5,7 @@ Bypass MelonLoader integrity checks without modifying MelonLoader
 This is a plugin. Not a mod
 
 # Todo:
-- [ ] SafeMods
+- [x] SafeMods
 - [ ] MelonPrefs?
 
 Replaces FunctionalBypass from [xKiraiChan/FunctionalVRC](https://github.com/xKiraiChan/FunctionalVRC/)
