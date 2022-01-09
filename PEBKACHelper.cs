@@ -11,10 +11,12 @@ namespace Astrum
         {
             private const string pluginsPath = "Plugins/AstralBypass.dll";
             private const string modsPath = "Mods/AstralBypass.dll";
-            private const int renameExitStatus = 69_8153697;  // random number, but the 69 should indicate that it's human written;
+            private const int renameExitStatus = 69420_3697;  // random number, but the 69420 should indicate that it's human written;
 
             public static void CheckForUserError()
             {
+                if (Directory.Exists("BepInEx")) return;
+
                 if (File.Exists(pluginsPath)) return;
 
                 if (File.Exists(modsPath)) MoveToPlugins(modsPath);

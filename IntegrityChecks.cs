@@ -1,6 +1,4 @@
-﻿#pragma warning disable CS0618 // Type or member is obsolete
-
-using MelonLoader;
+﻿using MelonLoader;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +14,7 @@ namespace Astrum
             {
                 if (!versionSigs.TryGetValue((string)typeof(BuildInfo).GetField(nameof(BuildInfo.Version)).GetValue(null), out (string, int) data))
                 {
-                    MelonLogger.Warning("[AstralBypass] Missing signature for your version of MelonLoader");
+                    AstralCore.Logger.Warn("[AstralBypass] Missing signature for your version of MelonLoader");
                     return;
                 }
 
