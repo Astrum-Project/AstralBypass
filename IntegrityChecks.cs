@@ -72,6 +72,21 @@ namespace Astrum
                     "48 8B 4C 24 60" + //       mov rcx,qword ptr ss:[rsp+60]
                     "48 89 4C 24 28", //        mov qword ptr ss:[rsp+28],rcx
                     32
+                ),
+                ["0.5.3"] = (
+                    "FF 15 FA 42 02 00" + //    call qword ptr ds:[< &mono_image_close >]
+                    "48 8B 1D ?? ?? ?? ??" + // mov rbx, qword ptr ds:[<&mono_raise_exception>]
+                    "48 8B 05 ?? ?? ?? ??" + // mov rax, qword ptr ds:[<&mono_get_exception_bad_image_format>]
+                    "48 8D 0D ?? ?? ?? ??" + // lea rcx, qword ptr ds:[7FF98C013150]
+                    "FF D0" + //                call rax
+                    "48 8B C8" + //             mov rcx, rax
+                    "FF D3" + //                call rbx
+                    "48 8B 05 ?? ?? ?? ??" + // mov rax, qword ptr ds:[7FF98C01CD48]
+                    "48 8B 4C 24 58" + //       mov rcx, qword ptr ss:[rsp+58]
+                    "48 89 4C 24 30" + //       mov qword ptr ss:[rsp+30],rcx
+                    "48 8B 4C 24 60" + //       mov rcx, qword ptr ss:[rsp+60]
+                    "48 89 4C 24 28", //        mov qword ptr ss:[rsp+28],rcx
+                    32
                 )
             };
 
