@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-[assembly: MelonInfo(typeof(Astrum.AstralBypass), nameof(Astrum.AstralBypass), "0.1.4", downloadLink: "github.com/Astrum-Project/" + nameof(Astrum.AstralBypass))]
+[assembly: MelonInfo(typeof(Astrum.AstralBypass), nameof(Astrum.AstralBypass), "0.1.5", downloadLink: "github.com/Astrum-Project/" + nameof(Astrum.AstralBypass))]
 [assembly: MelonColor(ConsoleColor.DarkMagenta)]
 
 namespace Astrum
