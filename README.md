@@ -5,11 +5,12 @@ Bypass MelonLoader integrity checks without modifying MelonLoader
 This is a plugin. Not a mod
 
 # Disclaimer
-This plugin does not endourse any developers creating it, anyone can use it.
+This plugin does not endourse anyone using it, as anyone can.
 
-At the same time, some people choose to make up lies because they don't like freedom
+This plugin is **universal**, not VRChat specific. It does not interact with any assemblies other than MelonLoader's
+- AstralCore is VRChat specific but a port could be made
 
-This plugin is **universal**, not VRChat specific
+Some people choose to make up lies because they don't like freedom:
 
 <img src="https://user-images.githubusercontent.com/68942228/162851808-31d28927-b146-4cd6-959d-863448400c4b.png" width="400px"/>
 
