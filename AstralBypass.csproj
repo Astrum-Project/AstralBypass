@@ -10,7 +10,7 @@
     <RootNamespace>Astrum</RootNamespace>
     <AssemblyName>AstralBypass</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-	<LangVersion>preview</LangVersion>
+    <LangVersion>preview</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -39,9 +39,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="AstralCore">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\AstralCore.dll</HintPath>
-    </Reference>
     <Reference Include="MelonLoader">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\MelonLoader.dll</HintPath>
     </Reference>
@@ -53,6 +50,8 @@
   <ItemGroup>
     <Compile Include="AstralBypass.cs" />
     <Compile Include="IntegrityChecks.cs" />
+    <Compile Include="MemoryUtils.cs" />
+    <Compile Include="PatternScanner.cs" />
     <Compile Include="PEBKACHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,5 +60,9 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>COPY "$(TargetPath)" "C:\Program Files (x86)\Steam\steamapps\common\VRChat\Plugins\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

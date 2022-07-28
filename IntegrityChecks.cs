@@ -1,3 +1,5 @@
+#pragma warning disable CS0618 // Type or member is obsolete
+
 using MelonLoader;
 using System;
 using System.Collections.Generic;
@@ -14,17 +16,17 @@ namespace Astrum
             {
                 if (!versionSigs.TryGetValue((string)typeof(BuildInfo).GetField(nameof(BuildInfo.Version)).GetValue(null), out (string, int) data))
                 {
-                    AstralCore.Logger.Warn("[AstralBypass] Missing signature for your version of MelonLoader");
+                    MelonLogger.Warning("[AstralBypass] Missing signature for your version of MelonLoader");
                     return;
                 }
 
-                pIC = AstralCore.Utils.PatternScanner.Scan(
+                pIC = PatternScanner.Scan(
                     "bootstrap.dll",
                     data.Item1,
                     data.Item2
                 );
 
-                AstralCore.Logger.Debug("Integrity Check = 0x" + pIC.ToInt64().ToString("X"));
+                MelonLogger.Log("Integrity Check = 0x" + pIC.ToInt64().ToString("X"));
             }
 
             private static readonly Dictionary<string, (string, int)> versionSigs = new Dictionary<string, (string, int)>()
@@ -109,13 +111,13 @@ namespace Astrum
             public static void Bypass()
             {
                 if (pIC == IntPtr.Zero) return;
-                AstralCore.Utils.MemoryUtils.WriteBytes(pIC, new byte[2] { 0x66, 0x90 });
+                MemoryUtils.WriteBytes(pIC, new byte[2] { 0x66, 0x90 });
             }
 
             public static void Repair()
             {
                 if (pIC == IntPtr.Zero) return;
-                AstralCore.Utils.MemoryUtils.WriteBytes(pIC, new byte[2] { 0xFF, 0xD3 });
+                MemoryUtils.WriteBytes(pIC, new byte[2] { 0xFF, 0xD3 });
             }
         }
     }
